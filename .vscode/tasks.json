@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "my_pbjs",
+            "type": "shell",
+            "command": "${workspaceFolder}\\node_modules\\.bin\\pbjs",
+            "args": [
+                "-t",
+                "static-module",
+                "-w",
+                "commonjs",
+                "-o",
+                "${workspaceFolder}\\protocol_buffer\\${fileBasenameNoExtension}.js",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "my_pbts",
+            "type": "shell",
+            "command": "${workspaceFolder}\\node_modules\\.bin\\pbts",
+            "args": [
+                "-o",
+                "${workspaceFolder}\\protocol_buffer\\${fileBasenameNoExtension}.d.ts",
+                "${workspaceFolder}\\protocol_buffer\\${fileBasenameNoExtension}.js"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
