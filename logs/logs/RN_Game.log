@@ -5,3 +5,138 @@
 [2019-06-25T22:32:57.510] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6080
 [2019-06-25T22:33:00.992] [INFO] default - 有一个client进入, key: 1
 [2019-06-25T22:33:09.505] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T11:36:11.638] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T11:36:11.645] [INFO] default - netbus连接上了 stype:101, host:127.0.0.1, port:6011的service
+[2019-06-27T11:36:11.653] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T11:36:12.677] [ERROR] default - 服务出现了一个错误: [object Object]
+[2019-06-27T11:36:12.681] [ERROR] default - stype:undefined的service 断开了连接!
+[2019-06-27T11:36:12.685] [ERROR] default - stype:undefined的service 断开了连接!
+[2019-06-27T11:36:15.691] [INFO] default - netbus连接上了 stype:101, host:127.0.0.1, port:6011的service
+[2019-06-27T11:36:16.710] [ERROR] default - 服务出现了一个错误: [object Object]
+[2019-06-27T11:36:16.714] [ERROR] default - stype:undefined的service 断开了连接!
+[2019-06-27T11:36:16.720] [ERROR] default - stype:undefined的service 断开了连接!
+[2019-06-27T11:36:19.727] [INFO] default - netbus连接上了 stype:101, host:127.0.0.1, port:6011的service
+[2019-06-27T11:40:03.603] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T11:40:03.610] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T11:40:56.268] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T11:41:39.827] [ERROR] default - stype:1的service 断开了连接!
+[2019-06-27T11:45:14.553] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T11:45:14.561] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T11:45:20.881] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T11:45:37.741] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T11:45:40.682] [ERROR] default - stype:1的service 断开了连接!
+[2019-06-27T14:58:18.075] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T14:58:18.081] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T14:59:23.786] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T15:01:03.007] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T15:01:13.683] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T15:01:13.690] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T15:01:21.105] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T15:01:53.286] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T15:01:53.293] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T15:02:01.951] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T15:02:33.760] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T15:02:40.723] [INFO] default - 有一个client进入, key: 2
+[2019-06-27T15:03:32.472] [INFO] default - 有一个client退出, key: 2
+[2019-06-27T15:03:34.590] [INFO] default - 有一个client进入, key: 3
+[2019-06-27T15:04:39.945] [INFO] default - 有一个client退出, key: 3
+[2019-06-27T15:04:49.668] [INFO] default - 有一个client进入, key: 4
+[2019-06-27T15:21:39.189] [INFO] default - 有一个client退出, key: 4
+[2019-06-27T15:21:40.645] [INFO] default - 有一个client进入, key: 5
+[2019-06-27T15:21:47.169] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T15:21:47.178] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T15:21:51.110] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T15:21:58.497] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T15:21:58.500] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T15:21:58.509] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T15:22:14.501] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T15:22:14.508] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T15:22:21.164] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T15:22:26.171] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T15:22:26.173] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T15:22:26.184] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T15:24:17.655] [INFO] default - 有一个client进入, key: 2
+[2019-06-27T15:24:51.820] [INFO] default - 有一个client退出, key: 2
+[2019-06-27T15:24:53.098] [INFO] default - 有一个client进入, key: 3
+[2019-06-27T15:24:56.046] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T15:24:56.049] [INFO] default - 有一个client退出, key: 3
+[2019-06-27T15:24:56.058] [INFO] default - 有一个client退出, key: 3
+[2019-06-27T15:25:25.096] [INFO] default - 有一个client进入, key: 4
+[2019-06-27T15:25:26.135] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T15:25:26.140] [INFO] default - 有一个client退出, key: 4
+[2019-06-27T15:25:26.150] [INFO] default - 有一个client退出, key: 4
+[2019-06-27T15:25:42.950] [INFO] default - 有一个client进入, key: 5
+[2019-06-27T15:25:44.098] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T15:25:44.101] [INFO] default - 有一个client退出, key: 5
+[2019-06-27T15:25:44.107] [INFO] default - 有一个client退出, key: 5
+[2019-06-27T15:26:53.940] [INFO] default - 有一个client进入, key: 6
+[2019-06-27T15:26:59.659] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T15:26:59.661] [INFO] default - 有一个client退出, key: 6
+[2019-06-27T15:26:59.667] [INFO] default - 有一个client退出, key: 6
+[2019-06-27T15:27:18.038] [INFO] default - 有一个client进入, key: 7
+[2019-06-27T15:29:15.410] [INFO] default - 有一个client退出, key: 7
+[2019-06-27T15:29:17.048] [INFO] default - 有一个client进入, key: 8
+[2019-06-27T15:29:50.352] [INFO] default - 有一个client退出, key: 8
+[2019-06-27T15:29:51.831] [INFO] default - 有一个client进入, key: 9
+[2019-06-27T15:29:52.692] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T15:29:52.694] [INFO] default - 有一个client退出, key: 9
+[2019-06-27T15:29:52.702] [INFO] default - 有一个client退出, key: 9
+[2019-06-27T15:30:29.358] [ERROR] default - stype:1的service 断开了连接!
+[2019-06-27T15:31:34.421] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T15:31:34.428] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T15:31:40.447] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T15:31:44.951] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T15:31:44.952] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T15:31:44.961] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T15:33:27.629] [INFO] default - 有一个client进入, key: 2
+[2019-06-27T15:33:32.196] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T15:33:32.198] [INFO] default - 有一个client退出, key: 2
+[2019-06-27T15:33:32.209] [INFO] default - 有一个client退出, key: 2
+[2019-06-27T15:36:16.880] [INFO] default - 有一个client进入, key: 3
+[2019-06-27T15:36:25.718] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T15:36:25.725] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T15:36:29.834] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T15:36:31.022] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T15:36:31.024] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T15:36:31.034] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T15:39:18.929] [INFO] default - 有一个client进入, key: 2
+[2019-06-27T18:01:42.126] [INFO] default - 有一个client退出, key: 2
+[2019-06-27T18:05:16.509] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T18:05:16.516] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T18:05:21.328] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T18:05:25.888] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T18:05:25.890] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T18:05:25.904] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T18:05:45.567] [INFO] default - 有一个client进入, key: 2
+[2019-06-27T18:05:48.051] [ERROR] default - 客户端传来一个未知信息, 准备将该客户端关闭!: [object ArrayBuffer]
+[2019-06-27T18:05:48.057] [INFO] default - 有一个client退出, key: 2
+[2019-06-27T18:05:48.066] [INFO] default - 有一个client退出, key: 2
+[2019-06-27T18:06:32.161] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T18:06:32.169] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T18:06:34.734] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T18:13:05.718] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T18:13:18.416] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T18:13:18.434] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T18:13:22.319] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T18:14:17.136] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T18:14:25.370] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T18:14:25.378] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T18:14:27.237] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T18:16:18.314] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T18:16:20.318] [INFO] default - 有一个client进入, key: 2
+[2019-06-27T18:16:43.424] [INFO] default - 有一个client退出, key: 2
+[2019-06-27T18:16:44.471] [INFO] default - 有一个client进入, key: 3
+[2019-06-27T18:16:55.080] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T18:16:55.089] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T18:17:01.825] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T18:25:38.925] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T18:25:40.204] [INFO] default - 有一个client进入, key: 2
+[2019-06-27T18:25:51.822] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T18:25:51.831] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T18:25:54.135] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T18:30:57.784] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T18:30:59.059] [INFO] default - 有一个client进入, key: 2
+[2019-06-27T18:32:58.091] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T18:32:58.098] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T18:33:04.681] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T18:33:16.432] [INFO] default - 有一个client退出, key: 1

@@ -1,4 +1,3 @@
-import "../logs/logger";
 import WebSession from "../netbus/WebSession";
 import ProtoBufManager from "../netbus/ProtoBufManager";
 import Netbus from "../netbus/Netbus";
@@ -29,6 +28,7 @@ export default class GatewayService implements ServiceInterface {
     public init() {}
     /** 收到客户端的消息, 将其转发给对应的自定义服务 */
     public onRecvClientMessageToGateway(client: WebSession, stype: number, ctype: number, message: Buffer) {
+        logger.info(`gatewayService收到消息 stype: ${stype}, ctype:${ctype}`)
         let utag = 0;
         let type = GatewayModel.getInstance().getCommandTypeOfMessage(stype, ctype);
         switch(type) {

@@ -1,0 +1,20 @@
+[2019-06-27T11:36:11.638] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T11:36:11.645] [INFO] default - netbus连接上了 stype:101, host:127.0.0.1, port:6011的service
+[2019-06-27T11:36:11.653] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T11:36:12.677] [ERROR] default - 服务出现了一个错误: [object Object]
+[2019-06-27T11:36:12.681] [ERROR] default - stype:undefined的service 断开了连接!
+[2019-06-27T11:36:12.685] [ERROR] default - stype:undefined的service 断开了连接!
+[2019-06-27T11:36:15.691] [INFO] default - netbus连接上了 stype:101, host:127.0.0.1, port:6011的service
+[2019-06-27T11:36:16.710] [ERROR] default - 服务出现了一个错误: [object Object]
+[2019-06-27T11:36:16.714] [ERROR] default - stype:undefined的service 断开了连接!
+[2019-06-27T11:36:16.720] [ERROR] default - stype:undefined的service 断开了连接!
+[2019-06-27T11:36:19.727] [INFO] default - netbus连接上了 stype:101, host:127.0.0.1, port:6011的service
+[2019-06-27T11:40:03.603] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T11:40:03.610] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T11:40:56.268] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T11:41:39.827] [ERROR] default - stype:1的service 断开了连接!
+[2019-06-27T11:45:14.553] [INFO] default - ws.Server已开启, ip: 127.0.0.1 port:6010
+[2019-06-27T11:45:14.561] [INFO] default - netbus连接上了 stype:1, host:127.0.0.1, port:6021的service
+[2019-06-27T11:45:20.881] [INFO] default - 有一个client进入, key: 1
+[2019-06-27T11:45:37.741] [INFO] default - 有一个client退出, key: 1
+[2019-06-27T11:45:40.682] [ERROR] default - stype:1的service 断开了连接!

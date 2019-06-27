@@ -7,7 +7,8 @@ import ServiceManager from './ServiceManager';
  * @Date: 2019-06-23 17:50:59  
  * @Describe: netbus
  */
-const logger = log4js.getLogger();
+const logger = log4js.getLogger("console");
+const getType = Object.prototype.toString;
 export default class Netbus {
     /** 单例 */
     private static instance: Netbus = null;
@@ -33,7 +34,7 @@ export default class Netbus {
         });
         server.on("error",      () => {
 
-        })
+        });
     }
     /** 获得一个客户端连接 */
     public getClientBySessionKey(sessionKey: number) {
@@ -51,13 +52,14 @@ export default class Netbus {
         client.addEventListener("open",    () => {
             logger.info(`有一个客户端连接上了!`);
         });
-        client.addEventListener("message", (event: MessageEvent) => {
-            if(!Buffer.isBuffer(event.data)) {
+        client.addEventListener("message", (event: any) => {
+            if(getType.call(event.data) !== "[object ArrayBuffer]") {
                 logger.error(`客户端传来一个未知信息, 准备将该客户端关闭!: ${event.data}`);
                 this.clientExit(client);
                 return ;
             }
-            this.onClientRecvMessage(client,  event.data);
+            let buffer = Buffer.from(event.data)
+            this.onClientRecvMessage(client, buffer);
         });
 
         client.addEventListener("close",    () => {
@@ -113,16 +115,16 @@ export default class Netbus {
 
     /** 连接上自定义服务器 */
     public connectWebsocketServer(stype: number, host: string, port:number) {
-        logger.info(`netbus连接上了 stype:${stype}, host:${host}, port:${port}的service`);
-        const server: WebSession = new WebSocket(`ws://${host}:${port}`);
+        const server: WebSession = new ws(`ws://${host}:${port}`);
         server.binaryType = "arraybuffer";
         
         server.addEventListener("open",     () => {
+            logger.info(`netbus连接上了 stype:${stype}, host:${host}, port:${port}的service`);
             server.sessionKey = stype;
             this.serverEnter(server);
         });
 
-        server.addEventListener("message",  (event: MessageEvent) => {
+        server.addEventListener("message",  (event: any) => {
             if(!Buffer.isBuffer(event.data)) {
                 logger.error(`客户端传来一个未知信息, 准备将该客户端关闭!: ${event.data}`);
                 return ;
@@ -179,6 +181,8 @@ export default class Netbus {
         }
     }
 }
+
+
 
 
  

@@ -1,0 +1,9 @@
+package LoginPackage;
+syntax = "proto3";
+
+message GuestLoginRep {
+    required string guestKey = 1;
+}
+message GuestLoginResp {
+    required int32 code = 1;
+}

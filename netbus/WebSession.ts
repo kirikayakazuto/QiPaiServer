@@ -1,6 +1,7 @@
 import ProtoBufManager from "./ProtoBufManager";
+import * as ws from "ws"
 
-export default class WebSession extends WebSocket {
+export default class WebSession extends ws {
     /** 玩家的唯一标识 */
     public uid?: number;
     /** 是否加密了 */

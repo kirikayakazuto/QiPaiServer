@@ -8,6 +8,7 @@ import * as log4js  from 'log4js';
 import WebSession from '../netbus/WebSession';
 import ProtoBufTools from '../netbus/ProtoBufTools';
 import Netbus from '../netbus/Netbus';
+import ServerConfig from '../config/ServerConfig';
 const logger = log4js.getLogger('console');
 
 
@@ -19,7 +20,11 @@ export default class GatewayModel  {
         }
         return this.instance;
     }
-
+    public init() {
+        for(let obj of ServerConfig.LoginCommand) {
+            this.loginMessageList.push(ProtoBufTools.getKeyByStypeAndCtype(obj.stype, obj.ctype));
+        }
+    }
     /** 已经登录的玩家 */
     private loginSessionMap: {[uid: number]: WebSession} = {};
     /** 获取已经登录玩家session */

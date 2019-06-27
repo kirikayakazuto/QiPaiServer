@@ -5,12 +5,12 @@
  */
 import ServiceInterface from "../netbus/ServiceInterface";
 import WebSession from "../netbus/WebSession";
-import UserServiceCtype from "./UserServiceCtype";
-import GatewayModel from "./GatewayModel";
-export class UserService implements ServiceInterface {
+import AdminServiceCtype from "./AdminServiceCtype";
+import ServerConfig from "../config/ServerConfig";
+export class AdminService implements ServiceInterface {
     /** 服务号 */
-    stype = 101;
-    serviceName = "UserService";
+    stype = ServerConfig.GateWayConfig.AdminService.stype;
+    serviceName = "AdminService";
     isForwardService: boolean;
 
     /** 初始化 */
@@ -20,7 +20,7 @@ export class UserService implements ServiceInterface {
     /** netbus传递消息给service */
     onRecvClientMessageToService?(client: WebSession, ctype: number, utag: number, body: Buffer): void {
         switch(ctype) {
-            case UserServiceCtype.AddLoginUser:
+            case AdminServiceCtype.AddLoginUser:
             break;
         }
     }
@@ -31,10 +31,10 @@ export class UserService implements ServiceInterface {
     /** 收到服务器转发来的消息 */
     onRecvServerMessageFormService(client: WebSession, ctype: number, utag: number, body: Buffer): void {
         switch(ctype) {
-            case UserServiceCtype.AddLoginUser:
+            case AdminServiceCtype.AddLoginUser:
                 addLoginUser(client, ctype, utag, body);
             break;
-            case UserServiceCtype.RemoveLoginUser:
+            case AdminServiceCtype.RemoveLoginUser:
                 removeLoginUser();
             break;
         }
