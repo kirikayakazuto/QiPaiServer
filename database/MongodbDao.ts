@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-08 08:00:21
- * @LastEditTime: 2019-07-08 16:43:58
+ * @LastEditTime: 2019-07-08 16:55:40
  * @LastEditors: denglang
  */
 /** 
@@ -106,8 +106,9 @@ export default class MongodbDao {
     }
 
     public async dropCollection() {
+        //lalalal
         
     }
 }
 
-MongodbDao.getInstance().find("site4");
+MongodbDao.getInstance().find("site5");
