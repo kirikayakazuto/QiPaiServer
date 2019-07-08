@@ -2,8 +2,9 @@ package LoginPackage;
 syntax = "proto3";
 
 message GuestLoginRep {
-    required string guestKey = 1;
+    required string account = 1;    // 账号
+    required string password = 2;   // 密码
 }
 message GuestLoginResp {
-    required int32 code = 1;
+    required int32 code = 1;        // 成功或者失败
 }

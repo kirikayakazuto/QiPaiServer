@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-07-08 08:00:21
- * @LastEditTime: 2019-07-08 11:55:20
+ * @LastEditTime: 2019-07-08 16:43:58
  * @LastEditors: denglang
  */
 /** 
@@ -50,57 +50,64 @@ export default class MongodbDao {
         });
     }
     /** 创建一个集合 */
-    public createCollection(collectionName: string) {
-        let promiseDb = this.getConnByPool();
-        promiseDb.then((client) => {
-            let dbase = client.db(this.dbName);
-            new Promise((resolve, reject) => {
-                dbase.createCollection(collectionName, (err, res) => {
-                    if(err) {
-                        reject(err);
-                        this.dbClientPool.close();
-                    }else {
-                        resolve(res);
-                    }
-                });
+    public async createCollection(collectionName: string) {
+        let promiseDb: any = await this.getConnByPool();
+        let dbase = promiseDb.db(this.dbName);
+        return await new Promise((resolve, reject) => {
+            dbase.createCollection(collectionName, (err, res) => {
+                if(err) {
+                    reject(err);
+                    this.dbClientPool.close();
+                }else {
+                    resolve(res);
+                }
             });
         });
     }
     /** 插入一条文档 */
-    public insertOnce(dbName: string) {
-        let promiseDb = this.getConnByPool();
-        promiseDb.then((client) => {
-            let dbase = client.db(dbName);
-            
-        });
-    }
-    /** 查询数据 */
-    public find() {
-
-    }
-    /** 测试 */
-    public test() {
-        this.createCollection("site3");
-
-    }
-    /**  */
-    public testInsert() {
-        mongodb.MongoClient.connect("mongodb://localhost:27017/testdb", {useNewUrlParser: true}, function(err, db) {
-            if(err) {
-                console.log("连接mongodb数据库的时候出现了一个错误!");
-                return ;
-            }
-
-            let dbase = db.db("testdb");
-            let myobj = {"name": "denglang", "age": 21};
-
-            dbase.collection("site").insertOne(myobj, (err, res) => {
-                if(err) throw err;
-                console.log("插入文档成功!");
-                db.close();
+    public async insertOnce(collectionName: string, obj: any) {
+        let promiseDb = await this.getConnByPool();
+        let dbase = promiseDb.db(this.dbName)
+        return await new Promise((resolve, reject) => {
+            dbase.collection(collectionName).insertOne(obj, (err, res) => {
+                if(err) {
+                    reject(err);
+                }else {
+                    resolve(res);
+                }
             });
         });
     }
+    /** 查找文档 */
+    public async find(collectionName: string, conditions?: any) {
+        let promiseDb = await this.getConnByPool();
+        let dbase = promiseDb.db(this.dbName)
+        let res = await dbase.collection(collectionName).find(conditions).toArray();
+        return res;
+    }
+    
+    /** 删除文档 */
+    public async deleteByConditions(collectionName: string, conditions: any) {
+        let promiseDb = await this.getConnByPool();
+        let dbase = promiseDb.db(this.dbName);
+        return await new Promise((resolve, reject) => {
+            dbase.collection(collectionName).deleteOne(conditions, (err, res) => {
+                if(err) {
+                    reject(err);
+                }else {
+                    resolve(res);
+                }
+            });
+        });
+    }
+    /** 删除全部 */
+    public async deleteAll(collectionName: string) {
+        
+    }
+
+    public async dropCollection() {
+        
+    }
 }
 
-MongodbDao.getInstance().test();
+MongodbDao.getInstance().find("site4");
