@@ -4,6 +4,7 @@ import Netbus from "../netbus/Netbus";
 import * as log4js  from 'log4js';
 import ServiceInterface from "../netbus/ServiceInterface";
 import GatewayModel, { CommandType } from "./GatewayModel";
+import ProtoBufTools from "../netbus/ProtoBufTools";
 
 /**
  * @Author: 邓朗 
@@ -44,7 +45,7 @@ export default class GatewayService implements ServiceInterface {
                 utag = client.uid;
             break;
         }
-        ProtoBufManager.getInstance().writeUtagToMessage(message, utag);
+        ProtoBufTools.writeUtagToMessage(message, utag);
         // 查询是否有对应的自定义服务
         let serverService = Netbus.getInstance().getServerBySessionKey(stype);
         if(!serverService) {
@@ -67,7 +68,7 @@ export default class GatewayService implements ServiceInterface {
                 clientSession = GatewayModel.getInstance().getLoginSessionByUid(utag);
             break;
         }
-        ProtoBufManager.getInstance().clearUtagToMessage(message);
+        ProtoBufTools.clearUtagToMessage(message);
         if(!clientSession) {
             logger.error(`将消息发给客户端时, 无法找到对应clien的websession, sessionKey: ${utag}`);
             return ;

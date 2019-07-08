@@ -45,5 +45,5 @@ export default class UserCenterService implements ServiceInterface {
 }
 /** 游客登录 */
 function guestLogin(client: WebSession, utag: number, body: Buffer) {
-    UserCenterModel.getInstance().guestLogin(utag, body);
+    UserCenterModel.getInstance().guestLogin(client, utag, body);
 }

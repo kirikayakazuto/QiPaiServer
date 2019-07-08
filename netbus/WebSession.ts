@@ -10,11 +10,16 @@ export default class WebSession extends ws {
     public sessionKey?: number;
 
     /** 发送一条没有编码的消息 */
-    public sendMessage?(stype: number, ctype: number, body: Buffer, utag: number) {
-        let cmd = ProtoBufManager.getInstance().encodeMessage(stype, ctype, utag, body);
-        if(this.isEncrypt) {
-            cmd = ProtoBufManager.getInstance().encryptMessage(cmd);
-        }
-        this.send(cmd);
+    public sendMessage?(stype: number, ctype: number, body: Uint8Array, utag: number) {
+
     }
+}
+
+/** 发送一条没有编码的消息 */
+export function sendMessage(stype: number, ctype: number, body: Uint8Array, utag: number) {
+    let cmd = ProtoBufManager.getInstance().encodeMessage(stype, ctype, utag, body);
+    if(this.isEncrypt) {
+        cmd = ProtoBufManager.getInstance().encryptMessage(cmd);
+    }
+    this.send(cmd);
 }

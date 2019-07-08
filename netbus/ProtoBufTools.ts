@@ -16,4 +16,30 @@ export default class ProtoBufTools {
         }
         return -1;
     }   
+
+    public static allocBuffer(totalLen: number) {
+        return Buffer.allocUnsafe(totalLen);
+    }
+
+    /** 编码头部信息 */
+    public static encodeHeadMessage(buf: Buffer, stype: number, ctype: number, uid: number) {
+        buf.writeInt8(stype, 0);
+        buf.writeInt16LE(ctype, 1);
+        buf.writeInt32LE(uid, 3);
+    }
+
+     /** 向消息中打入utag */
+     public static writeUtagToMessage(buf: Buffer, utag: number) {
+        return buf.writeInt32LE(utag, 3);
+    }
+    /** 清理消息中的utag */
+    public static clearUtagToMessage(buf: Buffer) {
+        return buf.writeInt32LE(0, 3);
+    }
+
+    public static writeUint8ArraytoBuffer(buffer: Buffer, uint8: Uint8Array) {
+        for(let i=0; i<uint8.length; i++) {
+            buffer.writeUInt8(uint8[i], ProtoBufTools.headSize + i);
+        }
+    }
 }

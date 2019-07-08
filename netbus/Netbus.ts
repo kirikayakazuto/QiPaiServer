@@ -1,7 +1,8 @@
 import * as log4js  from 'log4js';
 import * as ws from "ws";
-import WebSession from "./WebSession"
+import WebSession, { sendMessage } from "./WebSession"
 import ServiceManager from './ServiceManager';
+import ProtoBufManager from './ProtoBufManager';
 /**
  * @Author: 邓朗 
  * @Date: 2019-06-23 17:50:59  
@@ -78,6 +79,7 @@ export default class Netbus {
     private clientEnter(client: WebSession) {
         client.isEncrypt = false;
         client.sessionKey = this.globalSessionKey ++;
+        client.sendMessage = sendMessage;
         this.globalSessionMap[client.sessionKey] = client;
         logger.info(`有一个client进入, key: ${client.sessionKey}`)
     }
@@ -125,11 +127,13 @@ export default class Netbus {
         });
 
         server.addEventListener("message",  (event: any) => {
-            if(!Buffer.isBuffer(event.data)) {
+            if(getType.call(event.data) !== "[object ArrayBuffer]") {
                 logger.error(`客户端传来一个未知信息, 准备将该客户端关闭!: ${event.data}`);
+                this.serverExit(server);
                 return ;
             }
-            this.onServerRecvMessage(server,  event.data);
+            let buffer = Buffer.from(event.data)
+            this.onServerRecvMessage(server,  buffer);
         });
 
         server.addEventListener("close",    () => {
@@ -156,6 +160,7 @@ export default class Netbus {
     /** service进入 */
     private serverEnter(server: WebSession) {
         server.isEncrypt = false;
+        server.sendMessage = sendMessage;
         if(this.serverSessionMap[server.sessionKey]) {
             logger.warn(`service重复注册! key: ${server.sessionKey}`);
         }

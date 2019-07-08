@@ -24,24 +24,17 @@ export default class ProtoBufManager {
     }
 
     /** 编码, 解码 */
-    public encodeMessage(stype: number, ctype: number, uid: number, message: Buffer) {
-        let tatleLen = ProtoBufTools.headSize + message.length;
-        let headBuf = this.encodeHeadMessage(stype, ctype, uid);
-        return Buffer.concat([headBuf, message], tatleLen);
+    public encodeMessage(stype: number, ctype: number, uid: number, body: Uint8Array) {
+        let tatleLen = ProtoBufTools.headSize + body.length;
+        let buf = ProtoBufTools.allocBuffer(tatleLen);
+        ProtoBufTools.encodeHeadMessage(buf, stype, ctype, uid);
+        ProtoBufTools.writeUint8ArraytoBuffer(buf, body);
+        return buf;
     }
     public decodeMessage() {
         
     }
 
-
-    /** 编码头部信息 */
-    private encodeHeadMessage(stype: number, ctype: number, uid: number) {
-        let buf: Buffer = Buffer.allocUnsafe(ProtoBufTools.headSize);
-        buf.writeInt8(stype, 0);
-        buf.writeInt16LE(ctype, 1);
-        buf.writeInt32LE(uid, 3);
-        return buf;
-    }
     /** 解码头部信息 */
     public decodeHeadMessage(message: Buffer) {
         let cmd: Array<number> = [];
@@ -59,14 +52,7 @@ export default class ProtoBufManager {
         return message.slice(ProtoBufTools.headSize);
     }
 
-    /** 向消息中打入utag */
-    public writeUtagToMessage(buf: Buffer, utag: number) {
-        return buf.writeInt32LE(utag, 3);
-    }
-    /** 清理消息中的utag */
-    public clearUtagToMessage(buf: Buffer) {
-        return buf.writeInt32LE(0, 3);
-    }
+   
 
     
 }
